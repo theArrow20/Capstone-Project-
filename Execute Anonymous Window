@@ -1,0 +1,131 @@
+//Exercise 1
+
+String a='Ankit Ashok Hegde';
+System.debug('String endswith: '+a.endsWith('e'));
+
+
+//Exercise 2
+
+Date todaysDate = date.today();
+Date added30Days = date.today().addDays(30);
+System.debug('Todays date'+todaysDate);
+System.debug('Added 30 days'+added30Days);
+
+
+//Exercise 3
+
+string integerValue = '10';
+integer intVal = Integer.valueOf(integerValue);
+System.debug('String to Integer: '+intVal);
+System.debug('Addition of 20: '+(intVal+20));
+
+
+//Exercise 4
+
+string name = 'Ankit Ashok Hegde';
+System.debug('Length of String: '+name.length());
+
+
+//Exercise 5
+
+List<Integer> intList = new List<Integer>();
+intList.add(10);
+intList.add(11);
+intList.add(13);
+System.debug('List Items: '+intList);
+System.debug('Element at index 1: '+intList.get(1));
+intList.set(1,100);
+System.debug('List after setting 100 at index: '+intList);
+intList.clear();
+System.debug('Empty List: '+intList);
+
+
+
+//Exercise 6
+
+Integer x = 20;
+while (x>12){
+    for (x = 0 ; x<10; x++){
+        system.debug('Value of x: '+x);
+    }
+}
+
+
+
+//Exercise 7
+
+Integer myluckyNumber = 15;
+Integer myunlucklyNumber = 7;
+System.debug('Answer: '+(myluckyNumber != (myunlucklyNumber + 8)));
+
+
+
+//Exercise 8
+
+Boolean isTrue = True;
+Boolean isFalse = False;
+System.debug('Answer: '+(isTrue || isFalse));
+
+
+//Exercise 9
+
+Date today = date.today();
+Date tomorrow = date.today().addDays(1);
+System.debug('Answer: '+(today !=tomorrow));
+
+
+//Exercise 10
+
+integer score = 90;
+if (score == 100){
+    System.debug('Grade: A+');
+}
+else if(score >= 90){
+    System.debug('Grade: A');
+}
+else if(score >= 80){
+    System.debug('Grade: B');
+}
+else{
+    System.debug('Grade: Failed');
+}
+
+
+
+//Exercise 11
+
+List <Billing__c> li=new List<Billing__c>();
+List<String> BillingList=new List<String>();
+li=[SELECT Id, Name, Status_c FROM Billing__c]; 
+for (Billing__c obj:li){
+	if (obj.Status__c== 'Paid'){
+		System.debug('Value of Current Record in the Loop '+obj);
+		BillingList.add(obj.Name); 
+	}
+}
+System.debug('Value of BillingList '+BillingList);
+
+
+
+//Exercise 11
+
+DiscountClass obj = new DiscountClass();
+Decimal finalPrice=obj.calculateDiscount(100);
+System.debug('finalPrice: '+finalPrice);
+
+
+//Exercise 12
+
+PremiumCustomer obj1 = new PremiumCustomer();
+Double discount = obj1.percentageDiscountTobeApplied();
+System.debug('Calling the interface method in PremiumCustomer to return 30% discount.');
+System.debug('Discount in percentage: '+(discount*100)+'%');
+normalCustomer obj2 = new normalCustomer();
+discount = obj2.percentageDiscountTobeApplied();
+System.debug('Calling the interface method in normalCustomer to return 10% discount.');
+System.debug('Discount in percentage: '+(discount*100)+'%');
+
+
+
+
+             
